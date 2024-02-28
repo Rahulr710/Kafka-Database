@@ -1,0 +1,12 @@
+Kafka is a distributed streaming platform used for building real-time data pipelines and applications. It enables the ingestion, storage, and processing of streams of records in real-time. Developed initially by LinkedIn, Kafka's architecture revolves around topics where producers publish records and consumers subscribe to these topics to process the data. It ensures fault tolerance, scalability, and high throughput by partitioning and replicating data across a cluster of servers. Kafka is widely adopted for use cases like log aggregation, stream processing, event sourcing, and messaging systems, making it a fundamental component in modern data architectures for handling large-scale real-time data streams.
+Below you can find the instaructions to install and use kafka on your local machine:
+
+First step is to start zookeeper on your windows cmd and the command to start zookeeper is : Zookeeper started: .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+Second step is to start Kafka server on your windows cmd and the command to start the Kafka server is : .\bin\windows\kafka-server-start.bat .\config\server.properties
+After your Kafka server is started you can now communicate with producer and consumer i.e., you can share messages with between client and server and the command to communicate is as follows:
+Producer: .\bin\windows\kafka-topics.bat --create --topic myFirstTopic --bootstrap-server localhost:9092 (This command will create your first databse)
+            .\bin\windows\kafka-console-producer.bat --topic myFirstTopic --bootstrap-server localhost:9092
+
+Consumer: .\bin\windows\kafka-console-consumer.bat --topic myFirstTopic --from-beginning --bootstrap-server localhost:9092
+
+By following the above instructions you can easily install Kakfa and run it on your local machine.
